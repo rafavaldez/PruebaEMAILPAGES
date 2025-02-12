@@ -1,0 +1,30 @@
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail() {
+        Email.send({
+            SecureToken: "21be8308-c6cb-4329-8273-72ba30428287",
+            Host: "smtp.mailendo.com",
+            Username: "toumaib26@gmail.com",
+            Password: "hiyzenishnhbnvcm", // ⚠ Usa una contraseña SMTP segura
+            To: "toumaib26@gmail.com",
+            From: "rafajesu123@gmail.com",
+            Subject: "San Valentín",
+            Body: "Alguien ha aceptado ser tu San Valentín ❤️",
+            Port: 587, // Usa 587 si 465 no funciona
+            UseSSL: true // Prueba con false si hay problemas
+        }).then(
+            message => {
+                alert("Correo enviado con éxito: " + message);
+                console.log("Correo enviado con éxito: ", message);
+            }
+        ).catch(
+            error => {
+                alert("Error al enviar el correo. Verifica la consola.");
+                console.error("Error al enviar el correo:", error);
+            }
+        );
+    }
+</script>
+
+<!-- Botón para probar el envío de email -->
+<button onclick="sendEmail()">Enviar Correo</button>
